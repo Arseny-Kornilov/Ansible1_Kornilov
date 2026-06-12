@@ -10,7 +10,7 @@ vector_config_file: "{{ vector_config_dir }}/vector.yaml"
 vector_data_dir: "{{ ansible_env.HOME }}/.vector/data"
 vector_user: "{{ ansible_user }}"
 ```
-Defaults:
+## Defaults:
 ```yaml
 local_vector_bin: "{{ ansible_env.HOME }}/.vector/bin/vector"
 vector_log_dir: "{{ ansible_env.HOME }}/.vector/logs"
@@ -18,7 +18,7 @@ vector_nohup_log: "{{ ansible_env.HOME }}/vector.log"
 ```
 
 
-Example Playbook
+# Example Playbook
 ```yaml
 - name: Create user vector
   ansible.builtin.user:
