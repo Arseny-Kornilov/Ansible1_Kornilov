@@ -1,16 +1,17 @@
-Role Name
-lighthouse-role
+# Role Name
+## lighthouse-role
 
 A brief description of the role goes here.
 
-Requirements
-gpg packet for signed binaries
+# Requirements
+## gpg packet for signed binaries
 
 Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
 
-Role Variables
+# Role Variables
 
-Vars:
+# Vars:
+```yaml
 lighthouse_version: "v8.1.3"
 lighthouse_arch_map:
   x86_64: "x86_64-unknown-linux-gnu"
@@ -24,6 +25,7 @@ lighthouse_data_dir: "/var/lib/lighthouse"
 lighthouse_pgp_key: "15E66D941F697E28F49381F426416DC3F30674B0"
 lighthouse_download_base: "https://github.com/sigp/lighthouse/releases/download/{{ lighthouse_version }}"
 
+```
 
 A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
 
