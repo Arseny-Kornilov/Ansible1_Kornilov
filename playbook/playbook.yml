@@ -1,0 +1,8 @@
+- name: Full process
+  hosts: localhost
+  become: true
+
+  roles:
+    - clickhouse
+    - vector-role
+    - lighthouse-role
