@@ -94,7 +94,7 @@ lighthouse_download_base: "https://github.com/sigp/lighthouse/releases/download/
 # License
 -------
 
-BSD
+## BSD
 
 # Author Information
 
