@@ -1,24 +1,15 @@
-Role Name
+# Role Name
+## Vector Role
 
-Vector Role
+# Role Variables
 
-A brief description of the role goes here.
-
-Requirements
-
-Jinja2 Template in templates' directory
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
-
-Role Variables
-
-Variables:
-
+## Variables:
+```yaml
 vector_config_dir: "{{ ansible_env.HOME }}/.vector/config"
 vector_config_file: "{{ vector_config_dir }}/vector.yaml"
 vector_data_dir: "{{ ansible_env.HOME }}/.vector/data"
 vector_user: "{{ ansible_user }}"
-
+```
 Defaults:
 
 local_vector_bin: "{{ ansible_env.HOME }}/.vector/bin/vector"
