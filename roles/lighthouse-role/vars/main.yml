@@ -1,0 +1,5 @@
+---
+lighthouse_version: "v8.1.3"
+lighthouse_arch_map:
+  x86_64: "x86_64-unknown-linux-gnu"
+  aarch64: "aarch64-unknown-linux-gnu"

@@ -1,0 +1,9 @@
+---
+vector_config_dir: "{{ ansible_env.HOME }}/.vector/config"
+
+vector_config_file: "{{ vector_config_dir }}/vector.yaml"
+
+vector_data_dir: "{{ ansible_env.HOME }}/.vector/data"
+
+vector_user: "{{ ansible_user }}"
+

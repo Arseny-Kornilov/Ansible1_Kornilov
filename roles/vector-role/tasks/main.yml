@@ -1,0 +1,45 @@
+---
+- name: Create user vector
+  ansible.builtin.user:
+    name: "{{ vector_user }}"
+    group: "{{ vector_group }}"
+    system: yes
+    shell: /usr/sbin/nologin
+    create_home: no
+    state: present
+
+- name: Create system directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ vector_user }}"
+    group: "{{ vector_group }}"
+    mode: '0755'
+      loop:
+        - "{{ vector_config_dir }}"
+        - "{{ vector_data_dir }}"
+        - "{{ vector_log_dir }}"
+
+- name: Copy binary to /usr/local/bin
+  ansible.builtin.copy:
+    src: "{{ local_vector_bin }}"
+    dest: /usr/local/bin/vector
+    mode: '0755'
+    owner: root
+    group: root
+    remote_src: yes
+
+- name: Copy config
+  copy:
+    src: /home/vboxuser/.vector/config/vector.yaml
+    dest: /etc/vector/vector.yaml
+    mode: '0755'
+    owner: root
+    group: root
+    remote_src: yes
+
+- name: Start Vector
+  shell: |
+    vector --config /home/vboxuser/.vector/config/vector.yaml
+  args:
+    executable: /bin/bash

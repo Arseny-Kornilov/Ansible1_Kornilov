@@ -1,0 +1,21 @@
+[Unit]
+Description=Lighthouse Beacon Node
+After=network.target
+
+[Service]
+Type=simple
+User={{ lighthouse_user }}
+Group={{ lighthouse_group }}
+WorkingDirectory={{ lighthouse_data_dir }}
+ExecStart={{ lighthouse_install_dir }}/lighthouse \
+  --datadir {{ lighthouse_data_dir }} \
+  {% if lighthouse_network is defined %}--network {{ lighthouse_network }} {% endif %}\
+  {% if lighthouse_extra_flags is defined %}{{ lighthouse_extra_flags }}{% endif %}
+Restart=always
+RestartSec=5
+{% if lighthouse_environment is defined %}
+Environment={{ lighthouse_environment }}
+{% endif %}
+
+[Install]
+WantedBy=multi-user.target
