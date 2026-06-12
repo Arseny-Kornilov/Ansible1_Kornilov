@@ -52,7 +52,7 @@ vector_nohup_log: "{{ ansible_env.HOME }}/vector.log"
 
 - name: Copy config
   copy:
-    src: /home/vboxuser/.vector/config/vector.yaml
+    src:  "{{ vector_config_file }}"
     dest: /etc/vector/vector.yaml
     mode: '0755'
     owner: root
@@ -61,7 +61,7 @@ vector_nohup_log: "{{ ansible_env.HOME }}/vector.log"
 
 - name: Start Vector
   shell: |
-    vector --config /home/vboxuser/.vector/config/vector.yaml
+    vector --config "{{ vector_config_file }}"
   args:
     executable: /bin/bash
 
