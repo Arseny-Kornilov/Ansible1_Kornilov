@@ -1,5 +1,5 @@
 # Role Name
-## lighthouse-role
+## Lighthouse Role
 
 # Requirements
 ## gpg packet for signed binaries
@@ -7,22 +7,21 @@
 
 # Role Variables
 
-
+## Vars:
 ```yaml
-Vars:
 lighthouse_version: "v8.1.3"
 lighthouse_arch_map:
   x86_64: "x86_64-unknown-linux-gnu"
   aarch64: "aarch64-unknown-linux-gnu"
-
-Defaults:
+```
+## Defaults:
+```yaml
 lighthouse_install_dir: "/opt/lighthouse"
 lighthouse_user: "lighthouse"
 lighthouse_group: "lighthouse"
 lighthouse_data_dir: "/var/lib/lighthouse"
 lighthouse_pgp_key: "15E66D941F697E28F49381F426416DC3F30674B0"
 lighthouse_download_base: "https://github.com/sigp/lighthouse/releases/download/{{ lighthouse_version }}"
-
 ```
 
 Example Playbook
