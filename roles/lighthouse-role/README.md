@@ -1,8 +1,6 @@
 # Role Name
 ## lighthouse-role
 
-A brief description of the role goes here.
-
 # Requirements
 ## gpg packet for signed binaries
 
@@ -10,8 +8,9 @@ Any pre-requisites that may not be covered by Ansible itself or the role should 
 
 # Role Variables
 
-# Vars:
+
 ```yaml
+Vars:
 lighthouse_version: "v8.1.3"
 lighthouse_arch_map:
   x86_64: "x86_64-unknown-linux-gnu"
@@ -35,6 +34,7 @@ Dependencies
 A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
 Example Playbook
+```yaml
 - name: Create lighthouse user and group
   user:
     name: "{{ lighthouse_user }}"
@@ -97,21 +97,16 @@ Example Playbook
     name: lighthouse
     state: started
     enabled: yes
+```
 
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
-
-License
+# License
 -------
 
 BSD
 
-Author Information
+# Author Information
 
-Role By Arseny Kornilov
+## Role By Arseny Kornilov
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+
