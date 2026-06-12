@@ -24,7 +24,7 @@ lighthouse_pgp_key: "15E66D941F697E28F49381F426416DC3F30674B0"
 lighthouse_download_base: "https://github.com/sigp/lighthouse/releases/download/{{ lighthouse_version }}"
 ```
 
-Example Playbook
+## Example Playbook
 ```yaml
 - name: Create lighthouse user and group
   user:
